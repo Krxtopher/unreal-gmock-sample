@@ -1,19 +1,15 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "SamplePlugin.h"
-#include "../Public/Tests/GTestFailureReporter.h"
+#include "../Public/Tests/GMockUEAdapter.h"
 
 #define LOCTEXT_NAMESPACE "FSamplePluginModule"
 
-using ::testing::UnitTest;
 
 void FSamplePluginModule::StartupModule()
 {
-	// Register a custom listener that adapts GTest failure events to UE error 
-	// messages which the UE AutomationTest framework uses to detect test
-	// failures.
-	UnitTest::GetInstance()->listeners()
-		.Append(new GTestFailureReporter());
+	// Enable GMock support.
+	GMockUEAdapter::Enable();
 }
 
 void FSamplePluginModule::ShutdownModule()
