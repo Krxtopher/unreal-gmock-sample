@@ -1,20 +1,23 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "SamplePlugin.h"
-#include "TestFailureReporter.h"
+#include "Tests/GTestFailureReporter.h"
 
 #define LOCTEXT_NAMESPACE "FSamplePluginModule"
 
+using ::testing::UnitTest;
+
 void FSamplePluginModule::StartupModule()
 {
-	::testing::TestEventListeners& Listeners = ::testing::UnitTest::GetInstance()->listeners();
-	Listeners.Append(new TestFailureReporter());
+	// Register a custom listener that adapts GTest failure events
+	// to UE Functional Test error messages.
+	UnitTest::GetInstance()->listeners()
+		.Append(new GTestFailureReporter());
 }
 
 void FSamplePluginModule::ShutdownModule()
 {
-	// This function may be called during shutdown to clean up your module.  For modules that support dynamic reloading,
-	// we call this function before unloading the module.
+	
 }
 
 #undef LOCTEXT_NAMESPACE
