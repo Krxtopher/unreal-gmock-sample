@@ -1,40 +1,40 @@
-#include "Misc/AutomationTest.h" // Required in all spec files
+#include "Misc/AutomationTest.h"
 #include "GoogleTest/include/gmock/gmock.h"
 
+#include "Spaceship.h"
 #include "Mocks/MockWeapon.h"
 
 using ::testing::Exactly;
 
-// Generate the header for our spec class using a macro.
-BEGIN_DEFINE_SPEC(SpaceshipSpec, "SampleProject.SpaceshipSpec",
+BEGIN_DEFINE_SPEC(SpaceshipSpec, "SamplePlugin.SpaceshipSpec",
 	EAutomationTestFlags::ProductFilter | EAutomationTestFlags::ApplicationContextMask)
 
-	// Declare any variables shared across this spec's tests here.
-	
 END_DEFINE_SPEC(SpaceshipSpec)
 
-// Override the Define() method to define our tests.
 void SpaceshipSpec::Define()
 {
-	Describe("The test", [this]()
+	Describe("Attack()", [this]()
 		{
-			It("mock", [this]()
+			It("should fire its weapon", [this]()
 				{
 					// SETUP
 
-					MockWeapon* Weapon = new MockWeapon();
-					EXPECT_CALL(*Weapon, Fire())
-						.Times(Exactly(1));
+					MockWeapon* mockWeapon = new MockWeapon();
+					EXPECT_CALL(*mockWeapon, Fire())
+						.Times(Exactly(2));
+
+					// Create a USpaceship instance that uses our mock weapon.
+					USpaceship* Ship = USpaceship::Create(mockWeapon);
 
 					// EXERCISE
 
-					Weapon->Fire();
+					Ship->FireAt(FVector());
 
 					// VALIDATE
 					
 					// IMPORTANT: The expectations of the mock are not evaluated until the object is destroyed so you must
 					// explicitly delete the mock object in the scope of the test.
-					delete Weapon;
+					delete mockWeapon;
 				});
 		});
 }

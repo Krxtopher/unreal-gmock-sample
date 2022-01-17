@@ -1,12 +1,6 @@
 #include "Weapon.h"
 
-FWeapon::FWeapon()
-{
-
-}
-
-
 void FWeapon::Fire()
 {
-
+	UE_LOG(LogTemp, Display, TEXT("Weapon fired"))
 }
