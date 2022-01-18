@@ -12,7 +12,7 @@ class SAMPLEPROJECT_API UWeapon : public UActorComponent
 
 public:	
 	UWeapon();
-	virtual ~UWeapon() = default;
+	virtual ~UWeapon();
 
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 

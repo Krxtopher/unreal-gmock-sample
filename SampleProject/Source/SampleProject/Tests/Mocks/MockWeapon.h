@@ -1,13 +1,14 @@
 #pragma once
 
-#include "SampleProject/Public/Weapon.h"
 #include "GoogleTest/include/gmock/gmock.h"
+#include "SampleProject/Public/Weapon.h"
+#include "MockWeapon.generated.h"
 
-class UMockWeapon : public UWeapon
+UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
+class SAMPLEPROJECT_API UMockWeapon : public UWeapon
 {
-public:
-	UMockWeapon() = default;
-	virtual ~UMockWeapon() = default;
+	GENERATED_BODY()
 
+public:
 	MOCK_METHOD(void, Fire, (), (override));
 };

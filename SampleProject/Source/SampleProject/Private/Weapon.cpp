@@ -13,6 +13,10 @@ UWeapon::UWeapon()
 	// ...
 }
 
+UWeapon::~UWeapon()
+{
+}
+
 // Called when the game starts
 void UWeapon::BeginPlay()
 {
