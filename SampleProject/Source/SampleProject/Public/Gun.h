@@ -7,11 +7,11 @@
 /**
  * 
  */
-class SAMPLEPROJECT_API Gunslinger
+class SAMPLEPROJECT_API Gun
 {
 public:
-	Gunslinger();
-	~Gunslinger();
+	Gun();
+	virtual ~Gun();
 
-	void Shoot();
+	virtual void Fire();
 };

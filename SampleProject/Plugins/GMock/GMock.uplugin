@@ -2,10 +2,10 @@
 	"FileVersion": 3,
 	"Version": 1,
 	"VersionName": "1.0",
-	"FriendlyName": "SamplePlugin",
-	"Description": "",
+	"FriendlyName": "GMock",
+	"Description": "Enables GMock to be used with the UE Automated Testing framework.",
 	"Category": "Other",
-	"CreatedBy": "",
+	"CreatedBy": "Kris Schultz",
 	"CreatedByURL": "",
 	"DocsURL": "",
 	"MarketplaceURL": "",
@@ -16,7 +16,7 @@
 	"Installed": false,
 	"Modules": [
 		{
-			"Name": "SamplePlugin",
+			"Name": "GMock",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		}

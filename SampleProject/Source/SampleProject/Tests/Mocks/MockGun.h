@@ -1,10 +1,13 @@
 #pragma once
 
-#include "Weapon.h"
 #include "GoogleTest/include/gmock/gmock.h"
+#include "SampleProject/Public/Gun.h"
 
-class MockWeapon : public FWeapon
+class MockGun : public Gun
 {
 public:
+	MockGun() {}
+	virtual ~MockGun() = default;
+
 	MOCK_METHOD(void, Fire, (), (override));
 };
