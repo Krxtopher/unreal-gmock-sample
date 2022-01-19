@@ -1,3 +1,6 @@
+/*
+This example shows how to mock any class that extends UObject.
+*/
 #pragma once
 
 #include "GoogleTest/include/gmock/gmock.h"

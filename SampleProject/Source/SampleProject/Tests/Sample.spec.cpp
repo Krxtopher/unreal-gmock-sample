@@ -1,11 +1,12 @@
 #include "Misc/AutomationTest.h"
 #include "GoogleTest/include/gmock/gmock.h"
 #include "GMock/Public/GMockUEAdapter.h"
-#include "SampleProject/Tests/Mocks/MockGun.h"
 #include "SampleProject/Tests/Mocks/MockWeapon.h"
 #include "Engine/Engine.h"
+#include "Spaceship.h"
 
 using ::testing::Exactly;
+using ::testing::Mock;
 
 BEGIN_DEFINE_SPEC(SampleSpec, "SampleProject.SampleSpec",
 	EAutomationTestFlags::ProductFilter | EAutomationTestFlags::ApplicationContextMask)
@@ -19,23 +20,25 @@ BEGIN_DEFINE_SPEC(SampleSpec, "SampleProject.SampleSpec",
 			GMockUEAdapter::Enable();
 		});
 
-	Describe("this simple test", [this]()
+	Describe("FireAt()", [this]()
 		{
-			LatentIt("test 1", [this](const FDoneDelegate& Done)
+			It("fires the ship's weapon", [this]()
 				{
-					//MockGun* mockWeapon = new MockGun();
-					UMockWeapon* mockWeapon = NewObject<UMockWeapon>();
-					EXPECT_CALL(*mockWeapon, Fire())
+					// SETUP
+
+					UMockWeapon* MockWeapon = NewObject<UMockWeapon>();
+					EXPECT_CALL(*MockWeapon, Fire())
 						.Times(Exactly(1));
 
-					//delete mockWeapon;
-					//mockWeapon->ConditionalBeginDestroy();
-					//mockWeapon = NULL;
+					ASpaceship* Ship = ASpaceship::Create(MockWeapon);
 
-					UWorld* World = GEngine->GetWorld();
-					//World->ForceGarbageCollection();
+					// EXERCISE
 
-					World->GetTimerManager().SetTimerForNextTick(Done);
+					Ship->FireAt(FVector());
+
+					// VERIFY
+
+					Mock::VerifyAndClearExpectations(MockWeapon);
 				});
 
 		});
