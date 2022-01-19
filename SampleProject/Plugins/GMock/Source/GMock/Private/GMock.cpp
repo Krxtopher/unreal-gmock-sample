@@ -7,7 +7,7 @@
 
 void FGMockModule::StartupModule()
 {
-	GMockUEAdapter::Enable();
+    
 }
 
 void FGMockModule::ShutdownModule()
@@ -16,5 +16,5 @@ void FGMockModule::ShutdownModule()
 }
 
 #undef LOCTEXT_NAMESPACE
-	
+
 IMPLEMENT_MODULE(FGMockModule, GMock)

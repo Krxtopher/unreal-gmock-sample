@@ -9,8 +9,8 @@
 UCLASS()
 class SAMPLEPROJECT_API UMockWeapon : public UWeapon
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	MOCK_METHOD(void, Fire, (), (override));
+    MOCK_METHOD(void, Fire, (), (override));
 };

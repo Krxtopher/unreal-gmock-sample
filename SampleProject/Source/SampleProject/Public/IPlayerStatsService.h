@@ -6,6 +6,6 @@
 class SAMPLEPROJECT_API IPlayerStatsService
 {
 public:
-	virtual ~IPlayerStatsService() {}
-	virtual void RecordWeaponFire() = 0;
+    virtual ~IPlayerStatsService() {}
+    virtual void RecordWeaponFire() = 0;
 };

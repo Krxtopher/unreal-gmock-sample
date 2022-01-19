@@ -8,65 +8,65 @@
 using ::testing::Exactly;
 using ::testing::Mock;
 
-BEGIN_DEFINE_SPEC(SpacehipSpec, "SampleProject.SpacehipSpec",
-	EAutomationTestFlags::ProductFilter | EAutomationTestFlags::ApplicationContextMask)
+BEGIN_DEFINE_SPEC(SpaceshipSpec, "SampleProject.SpaceshipSpec",
+    EAutomationTestFlags::ProductFilter | EAutomationTestFlags::ApplicationContextMask)
 
-	// Declare variables shared across tests.
-	ASpaceship* Ship;
-	UMockWeapon* MockWeapon;
-	FMockPlayerStatsService* MockPlayerStatsService;
+// Declare variables shared across tests.
+ASpaceship* Ship;
+UMockWeapon* MockWeapon;
+FMockPlayerStatsService* MockPlayerStatsService;
 
-	END_DEFINE_SPEC(SpacehipSpec)
+END_DEFINE_SPEC(SpaceshipSpec)
 
-	void SpacehipSpec::Define()
+void SpaceshipSpec::Define()
 {
-	BeforeEach([this]()
-		{
-			// Activate the GMockUEAdapter. This is required for GMock to work
-			// in UE tests.
-			GMockUEAdapter::Enable();
+    BeforeEach([this]()
+    {
+        // Activate the GMockUEAdapter. This is required for GMock to work
+        // in UE tests.
+        GMockUEAdapter::Enable();
 
-			// Create an instance of the class we're testing being careful to
-			// supply mock implementations of all dependencies so that our 
-			// instance is fully isolated from the rest of the system during the 
-			// tests.
-			MockWeapon = NewObject<UMockWeapon>();
-			MockPlayerStatsService = new FMockPlayerStatsService();
-			Ship = ASpaceship::Create(MockWeapon, MockPlayerStatsService);
-		});
+        // Create an instance of the class we're testing being careful to
+        // supply mock implementations of all dependencies so that our 
+        // instance is fully isolated from the rest of the system during the 
+        // tests.
+        MockWeapon = NewObject<UMockWeapon>();
+        MockPlayerStatsService = new FMockPlayerStatsService();
+        Ship = ASpaceship::Create(MockWeapon, MockPlayerStatsService);
+    });
 
-	Describe("FireAt()", [this]()
-		{
-			It("fires the ship's weapon", [this]()
-				{
-					// SETUP
+    Describe("FireAt()", [this]()
+    {
+        It("fires the ship's weapon", [this]()
+        {
+            // SETUP
 
-					EXPECT_CALL(*MockWeapon, Fire())
-						.Times(Exactly(1));
+            EXPECT_CALL(*MockWeapon, Fire())
+                .Times(Exactly(1));
 
-					// EXERCISE
+            // EXERCISE
 
-					Ship->FireAt(FVector());
+            Ship->FireAt(FVector());
 
-					// VERIFY
+            // VERIFY
 
-					Mock::VerifyAndClearExpectations(MockWeapon);
-				});
+            Mock::VerifyAndClearExpectations(MockWeapon);
+        });
 
-			It("increments the player's 'shots fired' stats", [this]()
-				{
-					// SETUP
+        It("increments the player's 'shots fired' stats", [this]()
+        {
+            // SETUP
 
-					EXPECT_CALL(*MockPlayerStatsService, RecordWeaponFire())
-						.Times(Exactly(1));
+            EXPECT_CALL(*MockPlayerStatsService, RecordWeaponFire())
+                .Times(Exactly(1));
 
-					// EXERCISE
+            // EXERCISE
 
-					Ship->FireAt(FVector());
+            Ship->FireAt(FVector());
 
-					// VERIFY
+            // VERIFY
 
-					Mock::VerifyAndClearExpectations(MockPlayerStatsService);
-				});
-		});
+            Mock::VerifyAndClearExpectations(MockPlayerStatsService);
+        });
+    });
 }

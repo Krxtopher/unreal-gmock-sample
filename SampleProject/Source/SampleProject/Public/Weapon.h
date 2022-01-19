@@ -4,17 +4,17 @@
 #include "Components/ActorComponent.h"
 #include "Weapon.generated.h"
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class SAMPLEPROJECT_API UWeapon : public UActorComponent
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
-public:	
-	UWeapon();
-	virtual ~UWeapon();
+public:
+    UWeapon();
+    virtual ~UWeapon();
 
-	/**
-	 * Fires this weapon.
-	 */
-	virtual void Fire();
+    /**
+     * Fires this weapon.
+     */
+    virtual void Fire();
 };

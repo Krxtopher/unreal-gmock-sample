@@ -2,18 +2,19 @@
 
 ASpaceship::ASpaceship()
 {
- 	PrimaryActorTick.bCanEverTick = false;
+    PrimaryActorTick.bCanEverTick = false;
 }
 
 void ASpaceship::FireAt(FVector WorldPosition)
 {
-	Weapon->Fire();
+    Weapon->Fire();
+    PlayerStats->RecordWeaponFire();
 }
 
 ASpaceship* ASpaceship::Create(UWeapon* Weapon, IPlayerStatsService* PlayerStats)
 {
-	ASpaceship* Ship = NewObject<ASpaceship>();
-	Ship->Weapon = Weapon;
-	Ship->PlayerStats = PlayerStats;
-	return Ship;
+    ASpaceship* Ship = NewObject<ASpaceship>();
+    Ship->Weapon = Weapon;
+    Ship->PlayerStats = PlayerStats;
+    return Ship;
 }

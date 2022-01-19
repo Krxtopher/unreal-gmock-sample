@@ -2,7 +2,7 @@
 
 UWeapon::UWeapon()
 {
-	PrimaryComponentTick.bCanEverTick = false;
+    PrimaryComponentTick.bCanEverTick = false;
 }
 
 UWeapon::~UWeapon()
@@ -11,6 +11,6 @@ UWeapon::~UWeapon()
 
 void UWeapon::Fire()
 {
-	UE_LOG(LogTemp, Display, TEXT("Weapon fired"));
+    UE_LOG(LogTemp, Display, TEXT("Weapon fired"));
 }
 

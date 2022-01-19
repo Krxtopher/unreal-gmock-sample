@@ -9,5 +9,5 @@
 class SAMPLEPROJECT_API FMockPlayerStatsService : public IPlayerStatsService
 {
 public:
-	MOCK_METHOD(void, RecordWeaponFire, (), (override));
+    MOCK_METHOD(void, RecordWeaponFire, (), (override));
 };
