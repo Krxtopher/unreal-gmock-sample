@@ -1,10 +1,9 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Weapon.h"
+#include "IPlayerStatsService.h"
 #include "Spaceship.generated.h"
 
 UCLASS()
@@ -22,6 +21,9 @@ private:
 	/** A reference to the ship's main weapon. */
 	UWeapon* Weapon;
 
+	/** Service used to track player stats. */
+	IPlayerStatsService* PlayerStats;
+
 // Static members
 
 public: 
@@ -29,5 +31,5 @@ public:
 	Factory function that returns a new ASpaceship instance. This is 
 	primarily used during testing as a mechanism to inject dependencies.
 	*/
-	static ASpaceship* Create(UWeapon* Weapon);
+	static ASpaceship* Create(UWeapon* Weapon, IPlayerStatsService* PlayerStats);
 };

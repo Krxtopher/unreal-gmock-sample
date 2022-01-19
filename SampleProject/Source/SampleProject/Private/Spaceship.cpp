@@ -10,9 +10,10 @@ void ASpaceship::FireAt(FVector WorldPosition)
 	Weapon->Fire();
 }
 
-ASpaceship* ASpaceship::Create(UWeapon* weapon)
+ASpaceship* ASpaceship::Create(UWeapon* Weapon, IPlayerStatsService* PlayerStats)
 {
-	ASpaceship* ship = NewObject<ASpaceship>();
-	ship->Weapon = weapon;
-	return ship;
+	ASpaceship* Ship = NewObject<ASpaceship>();
+	Ship->Weapon = Weapon;
+	Ship->PlayerStats = PlayerStats;
+	return Ship;
 }

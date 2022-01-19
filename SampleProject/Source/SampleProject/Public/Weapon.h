@@ -4,7 +4,6 @@
 #include "Components/ActorComponent.h"
 #include "Weapon.generated.h"
 
-
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class SAMPLEPROJECT_API UWeapon : public UActorComponent
 {
@@ -14,14 +13,8 @@ public:
 	UWeapon();
 	virtual ~UWeapon();
 
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
 	/**
 	 * Fires this weapon.
 	 */
 	virtual void Fire();
-
-protected:
-	virtual void BeginPlay() override;
-
 };
