@@ -11,7 +11,7 @@ class SAMPLEPROJECT_API UWeapon : public UActorComponent
 
 public:
     UWeapon();
-    virtual ~UWeapon();
+    virtual ~UWeapon() override;
 
     /**
      * Fires this weapon.

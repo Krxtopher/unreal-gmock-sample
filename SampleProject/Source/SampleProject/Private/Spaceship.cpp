@@ -5,7 +5,7 @@ ASpaceship::ASpaceship()
     PrimaryActorTick.bCanEverTick = false;
 }
 
-void ASpaceship::FireAt(FVector WorldPosition)
+void ASpaceship::FireAt(const FVector WorldPosition)
 {
     Weapon->Fire();
     PlayerStats->RecordWeaponFire();

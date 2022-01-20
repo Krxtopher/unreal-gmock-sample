@@ -15,10 +15,11 @@ public:
     ASpaceship();
 
     /** Causes the ship to fire its weapon toward the indicated coordinate. */
-    virtual void FireAt(FVector WorldPosition);
+    virtual void FireAt(const FVector WorldPosition);
 
 private:
     /** A reference to the ship's main weapon. */
+    UPROPERTY()
     UWeapon* Weapon;
 
     /** Service used to track player stats. */
