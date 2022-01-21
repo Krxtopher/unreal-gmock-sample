@@ -38,6 +38,7 @@ public class GMockAdapter : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
+				"GoogleTest",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
