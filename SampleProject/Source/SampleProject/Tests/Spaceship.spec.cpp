@@ -1,6 +1,6 @@
 #include "Misc/AutomationTest.h"
 #include "GoogleTest/include/gmock/gmock.h"
-#include "GMock/Public/GMockUEAdapter.h"
+#include "GMockAdapter/Public/GMockUEAdapter.h"
 #include "Mocks/MockWeapon.h"
 #include "Mocks/MockPlayerStatsService.h"
 #include "Spaceship.h"

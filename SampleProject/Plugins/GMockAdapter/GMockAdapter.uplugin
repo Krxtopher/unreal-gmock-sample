@@ -2,8 +2,8 @@
 	"FileVersion": 3,
 	"Version": 1,
 	"VersionName": "1.0",
-	"FriendlyName": "GMock",
-	"Description": "Enables GMock to be used with the UE Automated Testing framework.",
+	"FriendlyName": "GMockAdapter",
+	"Description": "",
 	"Category": "Other",
 	"CreatedBy": "Kris Schultz",
 	"CreatedByURL": "",
@@ -16,7 +16,7 @@
 	"Installed": false,
 	"Modules": [
 		{
-			"Name": "GMock",
+			"Name": "GMockAdapter",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		}

@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class GMock : ModuleRules
+public class GMockAdapter : ModuleRules
 {
-	public GMock(ReadOnlyTargetRules Target) : base(Target)
+	public GMockAdapter(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
@@ -38,7 +38,6 @@ public class GMock : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
-                "GoogleTest",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
