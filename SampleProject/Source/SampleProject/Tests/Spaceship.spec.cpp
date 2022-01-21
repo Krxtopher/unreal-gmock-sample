@@ -1,6 +1,6 @@
 #include "Misc/AutomationTest.h"
 #include "GoogleTest/include/gmock/gmock.h"
-#include "GMockAdapter/Public/GMockUEAdapter.h"
+#include "GMockAdapter/Public/GMockAdapter.h"
 #include "Mocks/MockWeapon.h"
 #include "Mocks/MockPlayerStatsService.h"
 #include "Spaceship.h"
@@ -22,9 +22,9 @@ void SpaceshipSpec::Define()
 {
     BeforeEach([this]()
     {
-        // Activate the GMockUEAdapter. This is required for GMock to work
+        // Activate the FGMockAdapter. This is required for GMock to work
         // in UE tests.
-        GMockUEAdapter::Enable();
+        FGMockAdapter::Enable();
 
         // Create an instance of the class we're testing being careful to
         // supply mock implementations of all dependencies so that our 
