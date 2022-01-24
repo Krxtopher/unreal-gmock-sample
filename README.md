@@ -34,9 +34,9 @@ That's it! You're now ready to start using mocks.
 
 Before you can write a test that uses mock objects you must implement those mocks. Mocks are created by subclassing an existing class or implementing an existing interface. GMock makes this incredibly easy.
 
-For an example of how to create a mock based on a regular C++ *class*, *struct*, or *interface*, see [SampleProject/Source/Tests/Mocks/**MockPlayerStatsService.h**](SampleProject/Source/Tests/Mocks/MockPlayerStatsService.h)
+For an example of how to create a mock based on a regular C++ *class*, *struct*, or *interface*, see [SampleProject/Source/SampleProject/Tests/Mocks/**MockPlayerStatsService.h**](SampleProject/Source/SampleProject/Tests/Mocks/MockPlayerStatsService.h)
 
-For an example of how to create a mock based on a class that extends Unreal's `UObject` (including `AActor` and others), see [SampleProject/Source/Tests/Mocks/**MockWeapon.h**](SampleProject/Source/Tests/Mocks/MockWeapon.h)
+For an example of how to create a mock based on a class that extends Unreal's `UObject` (including `AActor` and others), see [SampleProject/Source/SampleProject/Tests/Mocks/**MockWeapon.h**](SampleProject/Source/SampleProject/Tests/Mocks/MockWeapon.h)
 
 ### Writing Tests
 
