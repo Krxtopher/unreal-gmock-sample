@@ -6,9 +6,11 @@ This repository contains a simple reference project demonstrating how to incorpo
 
 A mocking framework can be invaluable when implementing unit tests. The good news is that Unreal Engine ships with a **GoogleTest** module which includes GMock, a powerful mocking library. Unfortunately, GMock's functionality isn't compatible with the UE Automation Testing framework out of the box. Luckily, this incompatibility can be remedied easily using the GoogleTest module's extensibility features. I've done that work so you don't have to.
 
-The [Working With GMock](#working-with-gmock) section of this document describes the basics of how to add GMock support to your own projects. This information is complete and useful even if you don't plan to spend time examining the sample project itself.
+### Documentation Overview
 
-The [Exploring the Sample Project](#exploring-the-sample-project) section provides additional detail about the sample project itself. If you're new to mocking or the GMock library, this section should provide you with a gentle introduction.
+The first section, [Using GMock in Your Own Projects](#using-gmock-in-your-own-projects), describes how to add GMock support to your own projects. This information is complete and useful even if you don't plan to spend time examining the sample project itself.
+
+The second section, [Exploring the Sample Project](#exploring-the-sample-project), provides additional detail about the sample project itself. If you're new to mocking or the GMock library, this section should provide you with a gentle introduction.
 
 ## Using GMock in Your Own Projects
 
