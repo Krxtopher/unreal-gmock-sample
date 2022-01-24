@@ -161,6 +161,6 @@ Below is an overview of the file structure of the C++ code files. Some files hav
         
 ```
 
-All of the code in this project has been heavily commented to help explain the implementation. Dive in!
-
 > ✏️ **Note:** This is only one of many approaches to organizing game and test code. Another useful approach is to bundle the test-specific code into its own module.
+
+All of the code in this project has been heavily commented to help explain the implementation. Dive in!
